@@ -35,6 +35,7 @@ part_type_orientation(part_star,0,360,0,0.1,0)
 part_type_direction(part_star,270,270,0,0)
 part_type_speed(part_star,3,5,0,0)
 alarm[0]=30
+global.usa=false
 </string>
           </argument>
         </arguments>
@@ -57,9 +58,72 @@ alarm[0]=30
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_particles_create_colour(part_sys,irandom_range(0,room_width),-16,part_star,c_white,1)
+            <string>if global.usa=false {
+part_particles_create_colour(part_sys,irandom_range(0,room_width),-16,part_star,c_white,1)
 part_particles_create_colour(part_sys,irandom_range(0,room_width),-20,part_star,c_white,1)
+} else {
+part_particles_create_colour(part_sys,irandom_range(0,room_width),-16,part_star,c_red,1)
+part_particles_create_colour(part_sys,irandom_range(0,room_width),-20,part_star,c_white,1)
+part_particles_create_colour(part_sys,irandom_range(0,room_width),-16,part_star,c_blue,1)
+}
 alarm[0]=10
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(ord("U")) {
+    if keyboard_check(ord("S")) {
+        if keyboard_check(ord("A")) {
+            global.usa=true
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if instance_exists(obj_player) {
+    draw_set_halign(fa_middle)
+    draw_set_valign(fa_middle)
+    draw_set_color(c_white)
+    draw_text(view_xview+view_wview/2,view_yview+view_hview-16,string(obj_player.hp))
+}
 </string>
           </argument>
         </arguments>

@@ -9,6 +9,7 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_bullet1</sprite>
     <sprite>sprites\spr_enemy_grunt</sprite>
+    <sprite>sprites\spr_enemy_blitzer</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
