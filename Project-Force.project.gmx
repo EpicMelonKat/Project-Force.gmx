@@ -10,6 +10,12 @@
     <sprite>sprites\spr_bullet1</sprite>
     <sprite>sprites\spr_enemy_grunt</sprite>
     <sprite>sprites\spr_enemy_blitzer</sprite>
+    <sprite>sprites\spr_cannon</sprite>
+    <sprite>sprites\spr_cannonball</sprite>
+    <sprite>sprites\spr_enbullet</sprite>
+    <sprite>sprites\spr_enemyship</sprite>
+    <sprite>sprites\spr_enlaser</sprite>
+    <sprite>sprites\spr_playership</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
